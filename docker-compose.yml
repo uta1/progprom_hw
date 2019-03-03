@@ -1,0 +1,11 @@
+version: "3"
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "8888:8888"
+  consumer:
+    build: consumer
+    volumes:
+      - ./consumer:/app
+    restart: on-failure
